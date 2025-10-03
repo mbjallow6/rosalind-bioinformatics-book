@@ -1,5 +1,4 @@
-# GitHub Actions workflow for deploying Quarto book to GitHub Pages
-# Fixed version without pip caching to avoid requirements.txt dependency
+# GitHub Actions workflow for deploying Quarto book to GitHub Pages with full setup
 
 name: Deploy Quarto Book to GitHub Pages
 
@@ -23,7 +22,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Python
@@ -44,7 +43,10 @@ jobs:
         with:
           version: pre-release
 
-      - name: Setup Pages
+      - name: Install TinyTeX for PDF rendering
+        run: quarto install tinytex
+
+      - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
 
       - name: Render Quarto Book
