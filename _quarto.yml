@@ -39,5 +39,6 @@ format:
     colorlinks: true
 
 execute:
-  freeze: auto
-  cache: true
+  freeze: false
+  cache: false
+  daemon: true
