@@ -1,3 +1,4 @@
+# using pyodide
 project:
   type: book
   output-dir: _book
@@ -7,7 +8,7 @@ book:
   subtitle: "An Interactive Learning Approach Using Rosalind Problems"
   author: "MB Jallow"
   date: today
-  
+
   chapters:
     - index.ipynb
     - part: "String Algorithms"
@@ -16,7 +17,7 @@ book:
     - part: "Motif Finding"
       chapters:
         - notebooks/BA2A.ipynb
-    - part: "Graph Algorithms"  
+    - part: "Graph Algorithms"
       chapters:
         - notebooks/BA3A.ipynb
 
@@ -29,31 +30,72 @@ format:
     number-sections: true
     highlight-style: github
     css: assets/custom.css
-    html-math-method: katex
-    
-launch_buttons:
-  thebe: true
-  binder: true
 
-# Binder configuration
-binder:
-  url: "https://mybinder.org"
-  repo: "https://github.com/mbjallow6/rosalind-bioinformatics-book"  
-  ref: "main"  
-
-# Thebe configuration  
-thebe:
-  selector: "div.cell[data-execution_count]"
+filters:
+  - pyodide
 
 execute:
-  freeze: false  
-  cache: false   
-  daemon: true
+  freeze: false
+  cache: false
+
+
+# Using Binder
+# project:
+#   type: book
+#   output-dir: _book
+
+# book:
+#   title: "Bioinformatics Algorithms: From Scratch with Python"
+#   subtitle: "An Interactive Learning Approach Using Rosalind Problems"
+#   author: "MB Jallow"
+#   date: today
+  
+#   chapters:
+#     - index.ipynb
+#     - part: "String Algorithms"
+#       chapters:
+#         - notebooks/BA10A.ipynb
+#     - part: "Motif Finding"
+#       chapters:
+#         - notebooks/BA2A.ipynb
+#     - part: "Graph Algorithms"  
+#       chapters:
+#         - notebooks/BA3A.ipynb
+
+# format:
+#   html:
+#     theme: cosmo
+#     code-fold: false
+#     code-tools: true
+#     toc: true
+#     number-sections: true
+#     highlight-style: github
+#     css: assets/custom.css
+#     html-math-method: katex
+    
+# launch_buttons:
+#   thebe: true
+#   binder: true
+
+# # Binder configuration
+# binder:
+#   url: "https://mybinder.org"
+#   repo: "https://github.com/mbjallow6/rosalind-bioinformatics-book"  
+#   ref: "main"  
+
+# # Thebe configuration  
+# thebe:
+#   selector: "div.cell[data-execution_count]"
+
+# execute:
+#   freeze: false  
+#   cache: false   
+#   daemon: true
 
 
 
 
-
+# PDF version
 # project:
 #   type: book
 #   output-dir: _book
